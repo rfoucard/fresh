@@ -1,0 +1,2 @@
+# cat=basic/enable/1; type=boolean; label=Activate fresh CSS
+active = 1
