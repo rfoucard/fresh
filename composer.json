@@ -1,0 +1,25 @@
+{
+  "name": "rfoucard/fresh",
+  "type": "typo3-cms-extension",
+  "description": "Fresh Backend: Tweaks the backend CSS of TYPO3 ",
+  "homepage": "",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "keywords": [
+    "TYPO3 CMS"
+  ],
+  "require": {
+    "typo3/cms-core": "^14.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rfoucard\\Fresh\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "fresh"
+    }
+  }
+}
