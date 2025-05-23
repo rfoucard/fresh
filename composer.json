@@ -1,7 +1,7 @@
 {
   "name": "rfoucard/fresh",
   "type": "typo3-cms-extension",
-  "description": "Fresh Backend: Tweaks the backend CSS of TYPO3 ",
+  "description": "Fresh Backend CSS Prototype for TYPO3 V14 dev",
   "homepage": "",
   "license": [
     "GPL-2.0-or-later"
