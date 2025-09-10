@@ -30,7 +30,7 @@
     --typo3-surface-container-highest: light-dark(var(--token-color-blue-15),var(--token-color-neutral-93));
 
     --typo3-state-default-focus-bg: light-dark(var(--token-color-blue-10), var(--token-color-neutral-75));
-    --typo3-state-default-hover-bg: light-dark(var(--token-color-blue-5), var(--token-color-neutral-80));
+    --typo3-state-default-hover-bg: light-dark(var(--token-color-blue-5), var(--token-color-neutral-75));
 
     --pagemodule-dropzone-bg: var(--typo3-surface-container-low);
 
@@ -345,10 +345,10 @@
 /*modulemenu*/
 .scaffold-modulemenu {
     box-shadow: none;
+    overflow: visible;
 }
-li.modulemenu-group {
-    border-top: 1px solid var(--token-color-neutral-15);
-    padding-top: 8px;
+.modulemenu>ul {
+    gap: 2px;
 }
 .modulemenu-group>button:not(:disabled) {
     position: relative;
@@ -372,6 +372,48 @@ li.modulemenu-group {
     --modulemenu-action-border-color-state: transparent;
 }
 
+/*Module menu with no icons*/
+.modulemenu-group-container .modulemenu-group-container .modulemenu-icon {
+    opacity: 0;
+    height: 24px;
+}
+
+:not(.scaffold-modulemenu-expanded).scaffold  .modulemenu-group>button:not(:disabled) .modulemenu-indicator {
+    display: none;
+}
+
+:not(.scaffold-modulemenu-expanded).scaffold .modulemenu-group-container .modulemenu-group-container {
+    display: none;
+    position: absolute;
+    left: 100%;
+    background: var(--typo3-surface-container-lowest);
+    width: var(--scaffold-modulemenu-expanded-width);
+    padding: 2px;
+    border-radius: var(--typo3-component-border-radius);
+    box-shadow: var(--typo3-component-box-shadow-flyout);
+    border: var(--typo3-component-border-width) solid var(--typo3-component-border-color);
+}
+
+:not(.scaffold-modulemenu-expanded).scaffold .modulemenu-group-container .modulemenu-group:hover .modulemenu-group-container {
+    display: grid;
+}
+
+:not(.scaffold-modulemenu-expanded).scaffold .modulemenu-group {
+    position: relative;
+}
+
+:not(.scaffold-modulemenu-expanded).scaffold .modulemenu-group-container .modulemenu-group-container span.modulemenu-name {
+    height: auto;
+    padding: 0;
+    position: absolute;
+    width: auto;
+    clip: unset;
+}
+:not(.scaffold-modulemenu-expanded).scaffold .modulemenu-action.modulemenu-action-active:has(~ul.collapse.show) {
+    --modulemenu-action-color-state: var(--typo3-state-default-focus-color);
+    --modulemenu-action-bg-state: var(--typo3-state-default-focus-bg);
+    --modulemenu-action-border-color-state: var(--typo3-state-default-focus-border-color);
+}
 /*Pagetree*/
 .tree-toolbar {
     background-color: var(--typo3-surface-container-lowest);
